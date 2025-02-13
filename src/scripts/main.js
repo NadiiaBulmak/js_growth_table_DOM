@@ -42,7 +42,7 @@ removeRowBtn.addEventListener('click', function () {
 appendColumnBtn.addEventListener('click', function () {
   const rows = tableBody.querySelectorAll('tr');
 
-  if (rows[0].children.length < 10) {
+  if (rows.length > 0 && rows[0].children.length < 10) {
     rows.forEach((row) => {
       const newCell = document.createElement('td');
 
@@ -56,7 +56,7 @@ appendColumnBtn.addEventListener('click', function () {
 removeColumnBtn.addEventListener('click', function () {
   const rows = tableBody.querySelectorAll('tr');
 
-  if (rows[0].children.length > 2) {
+  if (rows.length > 0 && rows[0].children.length > 2) {
     rows.forEach((row) => {
       row.lastElementChild.remove();
     });
